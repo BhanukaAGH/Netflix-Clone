@@ -7,4 +7,8 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+const withTM = require('next-transpile-modules')([
+  '@stripe/firestore-stripe-payments',
+])
+
+module.exports = withTM(nextConfig)
